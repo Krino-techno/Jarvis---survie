@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17242b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="JARVIS Survie">
+<meta name="description" content="Assistant personnel de préparation à la crise, conçu pour fonctionner hors ligne.">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>JARVIS SURVIE</title>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="logo">J</div><div><h1>JARVIS <span>SURVIE</span></h1><p>ASSISTANT PERSONNEL DE CRISE</p></div></div>
+  <div class="status"><span class="dot"></span><span id="network">MODE LOCAL</span></div>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">TABLEAU DE BORD</p>
+    <h2>Rester prêt.<br><em>Garder le contrôle.</em></h2>
+    <p class="sub">Les outils essentiels, même sans réseau opérateur.</p>
+    <div class="hero-meta"><span>● Données stockées sur cet appareil</span><span id="today"></span></div>
+  </section>
+
+  <section class="metrics">
+    <article class="metric"><span class="metric-icon">◉</span><span class="metric-label">EAU DISPONIBLE</span><strong><span id="waterDisplay">24</span> <small>L</small></strong><span class="metric-foot" id="waterDays">12 jours à 2 L/personne/jour</span></article>
+    <article class="metric"><span class="metric-icon">▦</span><span class="metric-label">AUTONOMIE ALIMENTAIRE</span><strong><span id="foodDisplay">14</span> <small>jours</small></strong><span class="metric-foot">Estimation à compléter</span></article>
+    <article class="metric"><span class="metric-icon">ϟ</span><span class="metric-label">PRÉPARATION</span><strong><span id="progressDisplay">0</span><small>%</small></strong><span class="metric-foot">Checklist de départ</span></article>
+  </section>
+
+  <nav class="tabs" aria-label="Modules">
+    <button class="tab active" data-tab="home">⌂<span>Accueil</span></button>
+    <button class="tab" data-tab="medical">✚<span>Soins</span></button>
+    <button class="tab" data-tab="maps">⌖<span>Cartes</span></button>
+    <button class="tab" data-tab="stocks">▤<span>Stocks</span></button>
+    <button class="tab" data-tab="comms">⌁<span>Comms</span></button>
+    <button class="tab" data-tab="kit">▣<span>Départ</span></button>
+  </nav>
+
+  <section class="panel active" id="home">
+    <div class="section-head"><div><p class="eyebrow">PRIORITÉ DU MOMENT</p><h3>Vérifications essentielles</h3></div><span class="pill">LOCAL</span></div>
+    <div id="checklist" class="checklist">
+      <label><input type="checkbox" data-check="maps"><span><b>Cartes hors ligne</b><small>Région du domicile et itinéraires de repli téléchargés</small></span></label>
+      <label><input type="checkbox" data-check="medical"><span><b>Fiches de secours</b><small>Documents utiles enregistrés sur l’iPhone</small></span></label>
+      <label><input type="checkbox" data-check="contacts"><span><b>Contacts et regroupement</b><small>Numéros et lieux importants préparés</small></span></label>
+      <label><input type="checkbox" data-check="stocks"><span><b>Stocks vérifiés</b><small>Eau, alimentation, hygiène et énergie</small></span></label>
+      <label><input type="checkbox" data-check="power"><span><b>Énergie disponible</b><small>iPhone chargé et batterie externe prête</small></span></label>
+      <label><input type="checkbox" data-check="radio"><span><b>Communications de secours</b><small>Appareils testés avec les proches</small></span></label>
+    </div>
+    <div class="notice"><b>À retenir</b><p>Une application hors ligne ne transmet pas de message à elle seule. Il faut un moyen disponible : réseau mobile, satellite compatible ou matériel radio adapté.</p></div>
+  </section>
+
+  <section class="panel" id="medical">
+    <div class="section-head"><div><p class="eyebrow">MODULE 01</p><h3>Soins & premiers secours</h3></div><span class="pill">GUIDES</span></div>
+    <p class="muted">Fiches de rappel à préparer et à vérifier avant une crise. En urgence, contacte les secours dès qu’un moyen le permet. En France : 112 ou 15 pour une urgence médicale, 18 pour les pompiers.</p>
+    <div class="cards">
+      <details class="guide"><summary>Hémorragie externe importante</summary><ol><li>Protège-toi et sécurise la scène.</li><li>Appuie fermement et directement sur la plaie avec un tissu propre ou un pansement adapté.</li><li>Fais alerter les secours et suis leurs instructions.</li><li>Ne retire pas un objet planté dans la plaie. Surveille la conscience et la respiration.</li></ol><p class="caution">Si une hémorragie massive ne peut être contrôlée par compression, applique les gestes enseignés dans une formation de secourisme et les instructions du régulateur.</p></details>
+      <details class="guide"><summary>Personne inconsciente</summary><ol><li>Vérifie la sécurité et essaie d’obtenir une réponse.</li><li>Fais appeler les secours.</li><li>Vérifie si la respiration est normale.</li><li>Si elle ne respire pas normalement, commence la réanimation et utilise un défibrillateur si disponible, en suivant les consignes des secours.</li><li>Si elle respire normalement, place-la en position latérale de sécurité si approprié et surveille-la.</li></ol></details>
+      <details class="guide"><summary>Brûlure thermique</summary><ol><li>Éloigne la personne de la source de chaleur sans te mettre en danger.</li><li>Refroidis rapidement la brûlure avec de l’eau courante tempérée selon les recommandations des secours.</li><li>Retire bijoux et vêtements non collés à la peau.</li><li>Ne perce pas les cloques et n’applique pas de beurre, d’huile ou de glace.</li><li>Demande un avis médical si la brûlure est étendue, profonde, située sur le visage, les mains ou les parties génitales, ou concerne une personne vulnérable.</li></ol></details>
+      <details class="guide"><summary>Traumatisme / suspicion de fracture</summary><ol><li>Évite les mouvements inutiles et sécurise les lieux.</li><li>Ne tente pas de remettre un membre en place.</li><li>Contrôle les saignements et surveille la conscience et la respiration.</li><li>Contacte les secours en cas de traumatisme important, douleur intense, déformation, trouble de sensibilité ou difficulté à se déplacer.</li></ol></details>
+      <details class="guide"><summary>Hypothermie / exposition au froid</summary><ol><li>Abrite la personne du froid et du vent.</li><li>Retire les vêtements mouillés si possible et isole-la du sol.</li><li>Réchauffe progressivement le tronc, sans chaleur directe intense ni friction vigoureuse.</li><li>Appelle les secours si confusion, somnolence, perte de connaissance ou état préoccupant.</li></ol></details>
+    </div>
+    <div class="notice warning"><b>Important</b><p>Ces rappels ne remplacent ni une formation ni les recommandations actualisées. Ne réalise pas d’acte invasif et n’utilise pas de médicament ou de protocole professionnel sur la seule base de cette application.</p></div>
+    <a class="link-button" href="https://www.securite-civile.interieur.gouv.fr/documentation/secourisme-et-associations/secourisme-references-techniques-nationales.html" target="_blank" rel="noreferrer">Référentiels officiels de secourisme ↗</a>
+  </section>
+
+  <section class="panel" id="maps">
+    <div class="section-head"><div><p class="eyebrow">MODULE 02</p><h3>Cartes & orientation</h3></div><span class="pill">GPS</span></div>
+    <div class="notice"><b>Préparation nécessaire</b><p>Les cartes doivent être téléchargées avant la panne. Le GPS peut fonctionner sans réseau opérateur, mais la précision dépend de la réception satellite et de l’environnement.</p></div>
+    <a class="link-button" href="https://organicmaps.app/fr/" target="_blank" rel="noreferrer">Installer Organic Maps ↗</a>
+    <a class="link-button secondary" href="https://support.apple.com/fr-fr/guide/iphone/iphcfb5b6b4f/ios" target="_blank" rel="noreferrer">Aide Plans d’Apple ↗</a>
+    <h4>Points importants à enregistrer</h4>
+    <div id="placesList" class="saved-list"></div>
+    <form id="placeForm" class="form-grid"><label>Nom du lieu<input required id="placeName" placeholder="Ex. point de regroupement"></label><label>Adresse ou coordonnées<textarea required id="placeAddress" rows="2" placeholder="Adresse, latitude/longitude ou repère"></textarea></label><button class="primary" type="submit">Ajouter le lieu</button></form>
+  </section>
+
+  <section class="panel" id="stocks">
+    <div class="section-head"><div><p class="eyebrow">MODULE 03</p><h3>Stocks & autonomie</h3></div><span class="pill">INVENTAIRE</span></div>
+    <div class="form-grid">
+      <label>Réserve d’eau (litres)<input id="waterInput" type="number" min="0" max="10000" value="24"></label>
+      <label>Personnes<input id="peopleInput" type="number" min="1" max="20" value="2"></label>
+      <label>Objectif d’eau (litres/personne/jour)<input id="waterTarget" type="number" min="1" max="10" step=".5" value="2"></label>
+      <label>Autonomie alimentaire estimée (jours)<input id="foodInput" type="number" min="0" max="365" value="14"></label>
+      <button class="primary" id="saveStocks" type="button">Enregistrer les stocks</button>
+    </div>
+    <div class="stock-result"><span>Autonomie en eau estimée</span><strong id="waterResult">6 jours</strong><small>Base de calcul indicative. Les besoins réels augmentent avec la chaleur, l’effort, l’hygiène et les besoins médicaux.</small></div>
+    <h4>Inventaire matériel</h4>
+    <form id="itemForm" class="form-grid"><label>Équipement<input id="itemName" required placeholder="Ex. piles AA"></label><label>Quantité<input id="itemQty" required placeholder="Ex. 8"></label><button class="primary" type="submit">Ajouter à l’inventaire</button></form>
+    <div id="itemsList" class="saved-list"></div>
+  </section>
+
+  <section class="panel" id="comms">
+    <div class="section-head"><div><p class="eyebrow">MODULE 04</p><h3>Communications</h3></div><span class="pill">SANS OPÉRATEUR</span></div>
+    <div class="notice warning"><b>Pas d’envoi automatique</b><p>Ce module conserve les contacts et messages sur l’iPhone. Il ne transmet pas de message par lui-même. Pour communiquer à distance sans réseau opérateur, prévois des radios compatibles et teste-les à l’avance.</p></div>
+    <h4>Contacts de crise</h4>
+    <form id="contactForm" class="form-grid"><label>Nom<input id="contactName" required placeholder="Nom ou rôle"></label><label>Numéro / canal radio<input id="contactInfo" required placeholder="Téléphone, indicatif ou canal"></label><label>Point de rendez-vous<textarea id="contactMeet" rows="2" placeholder="Lieu convenu"></textarea></label><button class="primary" type="submit">Enregistrer le contact</button></form>
+    <div id="contactsList" class="saved-list"></div>
+    <h4>Message préécrit</h4>
+    <textarea id="messageTemplate" rows="4">Je suis en sécurité. Voici ma situation : [à compléter]. Mon point de rendez-vous est : [lieu]. Prochaine tentative de contact : [heure convenue].</textarea>
+    <button class="primary" id="copyMessage" type="button">Copier le message</button>
+    <p class="muted small">Pour un réseau radio LoRa : consulte Meshtastic et utilise un appareil compatible en fréquence européenne. La portée dépend fortement du terrain et de la hauteur des antennes.</p>
+    <a class="link-button" href="https://meshtastic.org/" target="_blank" rel="noreferrer">Documentation Meshtastic ↗</a>
+  </section>
+
+  <section class="panel" id="kit">
+    <div class="section-head"><div><p class="eyebrow">MODULE 05</p><h3>Départ d’urgence</h3></div><span class="pill">2 PERSONNES</span></div>
+    <p class="muted">Liste de base à adapter aux besoins de chacun, à la saison et à la durée prévue.</p>
+    <div id="kitList" class="checklist">
+      <label><input type="checkbox" data-kit="water"><span><b>Eau et traitement adapté</b><small>Réserve, gourdes et moyen fiable de rendre l’eau potable</small></span></label>
+      <label><input type="checkbox" data-kit="food"><span><b>Alimentation et ouvre-boîte</b><small>Rations adaptées, faciles à préparer</small></span></label>
+      <label><input type="checkbox" data-kit="medical"><span><b>Trousse de premiers secours</b><small>Matériel connu et médicaments personnels nécessaires</small></span></label>
+      <label><input type="checkbox" data-kit="light"><span><b>Éclairage et énergie</b><small>Lampe, piles, batterie externe et câbles</small></span></label>
+      <label><input type="checkbox" data-kit="clothes"><span><b>Vêtements et protection météo</b><small>Couche chaude, pluie, chaussures adaptées</small></span></label>
+      <label><input type="checkbox" data-kit="docs"><span><b>Documents et argent liquide</b><small>Copies utiles, contacts, moyens de paiement</small></span></label>
+      <label><input type="checkbox" data-kit="radio"><span><b>Communications</b><small>Radio adaptée, écouteurs et plan de contact</small></span></label>
+      <label><input type="checkbox" data-kit="hygiene"><span><b>Hygiène et déchets</b><small>Sacs, savon, mouchoirs et protections nécessaires</small></span></label>
+    </div>
+    <h4>Notes personnelles</h4><textarea id="notes" rows="4" placeholder="Besoins spécifiques, matériel manquant, consignes familiales…"></textarea>
+    <button class="primary" id="exportData" type="button">Exporter mes données (JSON)</button>
+    <label class="file-label">Importer une sauvegarde JSON<input id="importData" type="file" accept=".json,application/json"></label>
+    <button class="danger" id="clearData" type="button">Effacer les données locales</button>
+  </section>
+
+  <footer><p>JARVIS SURVIE · Version 0.1</p><p>Prototype local — vérifier les informations critiques et tester hors ligne avant toute utilisation réelle.</p></footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

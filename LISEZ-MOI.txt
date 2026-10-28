@@ -1,0 +1,24 @@
+# JARVIS SURVIE — prototype v0.1
+
+## Contenu
+- `index.html` : interface française
+- `style.css` : design mobile
+- `app.js` : navigation, inventaires et sauvegarde locale
+- `manifest.json` et `sw.js` : base d'installation PWA et cache hors ligne
+
+## Installation sur iPhone
+Pour installer comme application web et mettre en cache les fichiers, il faut d'abord héberger ce dossier sur une adresse HTTPS (par exemple GitHub Pages). Une simple ouverture du fichier HTML depuis Fichiers ne suffit pas à activer le service worker et l'installation PWA.
+1. Publier les fichiers sur un hébergement HTTPS privé ou public.
+2. Ouvrir l'URL dans Safari sur l'iPhone.
+3. Partager → Ajouter à l'écran d'accueil.
+4. Ouvrir JARVIS SURVIE une première fois en ligne pour mettre les fichiers en cache.
+5. Tester en mode avion. Télécharger séparément les cartes hors ligne dans Organic Maps ou Plans.
+
+## Données et confidentialité
+Les données des formulaires sont conservées dans `localStorage` du navigateur sur cet appareil. Utiliser « Exporter mes données » pour sauvegarder un JSON et le conserver dans un emplacement sûr. Ce prototype ne chiffre pas ce fichier d'export et ne synchronise pas les données.
+
+## Limites
+- La messagerie radio, le GPS intégré, les appels satellite et l'IA locale ne sont pas intégrés.
+- Les liens vers les ressources externes exigent une connexion.
+- Les fiches de secours sont des rappels synthétiques, à valider avec les recommandations officielles et une formation adaptée.
+- Ce prototype n'est pas un dispositif médical ou une garantie de secours.

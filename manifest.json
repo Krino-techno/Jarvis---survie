@@ -1,0 +1,12 @@
+{
+  "name": "JARVIS SURVIE",
+  "short_name": "JARVIS",
+  "description": "Assistant personnel de préparation à la crise, conçu pour fonctionner hors ligne.",
+  "lang": "fr-FR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10191e",
+  "theme_color": "#17242b",
+  "icons": []
+}
